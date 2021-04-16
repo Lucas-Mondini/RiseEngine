@@ -1,0 +1,6 @@
+[submodule "Rise/Rise/vendor/glfw"]
+	path = Rise/Rise/vendor/glfw
+	url = https://github.com/Lucas-Mondini/glfw
+[submodule "Rise/Rise/vendor/SPDLog"]
+	path = Rise/Rise/vendor/SPDLog
+	url = https://github.com/gabime/spdlog
