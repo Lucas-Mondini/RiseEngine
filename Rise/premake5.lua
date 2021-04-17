@@ -24,8 +24,8 @@ project "Rise"
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
 
-	pchheader "risePCH.h"
-	pchsource "%{prj.name}/src/RISEpch.cpp"
+	pchheader "RisePCH.h"
+	pchsource "%{prj.name}/src/RisePCH.cpp"
 
 	files {
 		"%{prj.name}/src/**.h",

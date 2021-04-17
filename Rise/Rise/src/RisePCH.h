@@ -14,6 +14,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include <Rise/Log.h>
+
 #ifdef RISE_PLATAFORM_WINDOWS
 	#include <Windows.h>
 #endif // SEG_PLATAFORM_WINDOWS

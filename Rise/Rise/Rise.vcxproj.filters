@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Rise">
+      <UniqueIdentifier>{78D48B7C-640B-8D0D-0DF8-7210F90D090F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Rise.h" />
+    <ClInclude Include="src\Rise\Application.h">
+      <Filter>Rise</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rise\Core.h">
+      <Filter>Rise</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rise\Log.h">
+      <Filter>Rise</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rise\Window.h">
+      <Filter>Rise</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rise\main.h">
+      <Filter>Rise</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RisePCH.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Rise\Application.cpp">
+      <Filter>Rise</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rise\Log.cpp">
+      <Filter>Rise</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rise\Window.cpp">
+      <Filter>Rise</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RisePCH.cpp" />
+  </ItemGroup>
+</Project>
