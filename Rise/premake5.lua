@@ -11,9 +11,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Includes to root (SolutionDir)
 IncludeDir = {}
-IncludeDir["GLFW"] = "Rise/vendor/GLFW/include"
+IncludeDir["GLFW"] = "Rise/vendor/glfw/include"
+IncludeDir["GLEW"] = "Rise/vendor/glew/include"
 
-include "Rise/vendor/GLFW"
+include "Rise/vendor/glfw"
+include "Rise/vendor/glew"
 
 project "Rise" 
 	location "Rise"
@@ -35,12 +37,14 @@ project "Rise"
 	includedirs{
 		"%{prj.name}/vendor/SPDLog/include",
 		"%{prj.name}/src",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.GLEW}"
 	}
 
 	links{
 		"GLFW",
-		"opengl32.lib"
+		"opengl32.lib",
+		"GLEW"
 	}
 
 	filter "system:windows"
@@ -85,7 +89,9 @@ project "Sandbox"
 
 	includedirs{
 		"Rise/vendor/SPDLog/include",
-		"Rise/src"
+		"Rise/src",
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.GLEW}"
 	}
 	
 	links{
