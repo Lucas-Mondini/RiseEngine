@@ -1,0 +1,12 @@
+.vs
+.vcxproj
+.filters
+.sln
+Rise.sln
+.user
+.vcxproj.user
+
+
+
+bin
+bin-int
