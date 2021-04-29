@@ -17,5 +17,5 @@
 #include <Rise/Log.h>
 
 #ifdef RISE_PLATAFORM_WINDOWS
-	#include <Windows.h>
+	//#include <Windows.h> //I will not include this for a while because I want this project to be multiplataform, on the future the flag RISE_PLATFORM_WINDOWS will change to something else
 #endif // SEG_PLATAFORM_WINDOWS
