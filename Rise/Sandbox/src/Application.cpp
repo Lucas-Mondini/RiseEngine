@@ -13,6 +13,6 @@ public:
 	}
 };
 
-Rise::Application* CreateApplication() {
+Rise::Application* Rise::CreateApplication() {
 	return new Sandbox();
 }
