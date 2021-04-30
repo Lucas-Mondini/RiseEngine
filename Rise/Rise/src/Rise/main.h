@@ -18,8 +18,11 @@ int main(int argc, char** argv) {
 	RISE_CORE_INFO("Initialized Log");
 	RISE_CORE_WARN("Creating application...");
 
-	auto app = Rise::CreateApplication();
+	Rise::Application* app = Rise::CreateApplication();
+
 	RISE_CORE_INFO("Application created sucessfully");
+
+
 	app->Run();
 	delete app;
 	
