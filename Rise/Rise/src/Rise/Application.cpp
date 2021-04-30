@@ -3,19 +3,18 @@
 
 namespace Rise {
 	void Application::Run() {
-		while (true) {
-			glClearColor(0.5f, 0.5f, 1.0f, 0.0f);
-			glClear(GL_COLOR_BUFFER_BIT);
-			glfwSwapBuffers(m_window->get());
+		while (!glfwWindowShouldClose(m_window1->get())) {
+			m_window1->Update();
+			glfwPollEvents();
 		}
 
 	}
 
 	Application::~Application() {
-		delete m_window;
+		delete m_window1;
 	}
 
 	Application::Application() {
-		m_window = new Window(800, 600, "Rise Engine");
+		m_window1 = new Window(1280, 720, "Rise Engine");
 	}
 }

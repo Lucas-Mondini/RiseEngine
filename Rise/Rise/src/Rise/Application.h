@@ -13,7 +13,7 @@ namespace Rise {
 
 		void Run();
 	private:
-		Rise::Window* m_window;
+		Rise::Window* m_window1;
 	};
 
 	Application* CreateApplication();
