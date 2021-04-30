@@ -6,6 +6,9 @@
 
 
 namespace Rise {
+
+	inline bool glfwInitialized = false;
+
 	class Window {
 	public:
 		Window(int width, int height, const char* title);
