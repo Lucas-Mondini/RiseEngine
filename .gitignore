@@ -6,7 +6,8 @@ Rise.sln
 .user
 .vcxproj.user
 
-
+Rise/Rise/vendor/glfw
+glfw
 
 bin
 bin-int
