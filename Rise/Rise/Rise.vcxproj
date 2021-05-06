@@ -84,6 +84,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -109,6 +110,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -135,6 +137,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -152,6 +155,8 @@
     <ClInclude Include="src\Rise.h" />
     <ClInclude Include="src\Rise\Application.h" />
     <ClInclude Include="src\Rise\Core.h" />
+    <ClInclude Include="src\Rise\Layer.h" />
+    <ClInclude Include="src\Rise\LayerStack.h" />
     <ClInclude Include="src\Rise\Log.h" />
     <ClInclude Include="src\Rise\Window.h" />
     <ClInclude Include="src\Rise\main.h" />
@@ -159,6 +164,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Rise\Application.cpp" />
+    <ClCompile Include="src\Rise\Layer.cpp" />
+    <ClCompile Include="src\Rise\LayerStack.cpp" />
     <ClCompile Include="src\Rise\Log.cpp" />
     <ClCompile Include="src\Rise\Window.cpp" />
     <ClCompile Include="src\RisePCH.cpp">

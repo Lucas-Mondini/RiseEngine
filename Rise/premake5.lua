@@ -63,14 +63,17 @@ project "Rise"
 
 		filter "configurations:Debug"
 			defines "RISE_DEBUG"
+			buildoptions "/MDd"
 			symbols "On"
 
 		filter "configurations:Release"
 			defines "RISE_RELEASE"
+			buildoptions "/MD"
 			optimize "On"
 
 		filter "configurations:Dist"
 			defines "RISE_DIST"
+			buildoptions "/MD"
 			optimize "On"
 
 

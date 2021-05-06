@@ -13,6 +13,12 @@
     <ClInclude Include="src\Rise\Core.h">
       <Filter>Rise</Filter>
     </ClInclude>
+    <ClInclude Include="src\Rise\Layer.h">
+      <Filter>Rise</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rise\LayerStack.h">
+      <Filter>Rise</Filter>
+    </ClInclude>
     <ClInclude Include="src\Rise\Log.h">
       <Filter>Rise</Filter>
     </ClInclude>
@@ -26,6 +32,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Rise\Application.cpp">
+      <Filter>Rise</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rise\Layer.cpp">
+      <Filter>Rise</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rise\LayerStack.cpp">
       <Filter>Rise</Filter>
     </ClCompile>
     <ClCompile Include="src\Rise\Log.cpp">
