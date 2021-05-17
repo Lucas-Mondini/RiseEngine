@@ -4,6 +4,9 @@
     <Filter Include="Rise">
       <UniqueIdentifier>{78D48B7C-640B-8D0D-0DF8-7210F90D090F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Rise\Event">
+      <UniqueIdentifier>{C9CF2C3B-B587-6E88-1E8F-47E40A660979}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Rise.h" />
@@ -12,6 +15,15 @@
     </ClInclude>
     <ClInclude Include="src\Rise\Core.h">
       <Filter>Rise</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rise\Event\ApplicationEvent.h">
+      <Filter>Rise\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rise\Event\Event.h">
+      <Filter>Rise\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rise\Event\InputEvent.h">
+      <Filter>Rise\Event</Filter>
     </ClInclude>
     <ClInclude Include="src\Rise\Layer.h">
       <Filter>Rise</Filter>

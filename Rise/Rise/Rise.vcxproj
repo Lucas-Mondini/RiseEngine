@@ -155,6 +155,9 @@
     <ClInclude Include="src\Rise.h" />
     <ClInclude Include="src\Rise\Application.h" />
     <ClInclude Include="src\Rise\Core.h" />
+    <ClInclude Include="src\Rise\Event\ApplicationEvent.h" />
+    <ClInclude Include="src\Rise\Event\Event.h" />
+    <ClInclude Include="src\Rise\Event\InputEvent.h" />
     <ClInclude Include="src\Rise\Layer.h" />
     <ClInclude Include="src\Rise\LayerStack.h" />
     <ClInclude Include="src\Rise\Log.h" />

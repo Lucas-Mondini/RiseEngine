@@ -27,6 +27,7 @@ namespace Rise {
 		m_Window = glfwCreateWindow(width, height, title, NULL, NULL);
 
 		if (!m_Window) {
+			//TODO fix this shit
 			RISE_CORE_ERROR("Failure on creating the window");
 			return;
 		}

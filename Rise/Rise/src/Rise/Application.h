@@ -1,5 +1,6 @@
 #pragma once
 #include <RisePCH.h>
+#include <Rise/Event/InputEvent.h>
 #include "Core.h"
 #include "Window.h"
 #include "LayerStack.h"
