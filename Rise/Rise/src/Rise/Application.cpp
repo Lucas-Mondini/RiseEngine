@@ -20,6 +20,13 @@ namespace Rise {
 
 	Application::Application() {
 		m_window1 = new Window(1280, 720, "Rise Engine");
+		m_window1->setEventCallback(std::bind(&Application::onEvent, this, std::placeholders::_1));
+	}
+
+	void Application::onEvent(Event& e) {
+		EventDispatcher dispatcher(e);
+
+		RISE_CORE_INFO("{0}", e.toString());
 	}
 
 	void Application::PushLayer(Layer* Layer) {
@@ -29,4 +36,7 @@ namespace Rise {
 	void Application::PushOverlay(Layer* Layer) {
 		m_LayerStack.PushOverlay(Layer);
 	}
+
+	
+
 }

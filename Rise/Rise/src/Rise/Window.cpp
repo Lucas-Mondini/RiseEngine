@@ -1,9 +1,17 @@
 #include "RisePCH.h"
 #include <Rise/Window.h>
 
+#include <Rise/Event/ApplicationEvent.h>
+#include <Rise/Event/InputEvent.h>
+
+
 
 namespace Rise {
 	Window::Window(int width, int height, const char* title) {
+
+		this->m_Properties.width	= width;
+		this->m_Properties.height	= height;
+		this->m_Properties.title	= title;
 
 		if (!glfwInitialized) {
 			if (!glfwInit()) {
@@ -25,7 +33,6 @@ namespace Rise {
 		//Window creating
 		
 		m_Window = glfwCreateWindow(width, height, title, NULL, NULL);
-
 		if (!m_Window) {
 			//TODO fix this shit
 			RISE_CORE_ERROR("Failure on creating the window");
@@ -34,6 +41,86 @@ namespace Rise {
 
 		//turn this window on actual context
 		glfwMakeContextCurrent(m_Window);
+		glfwSetWindowUserPointer(m_Window, &m_Properties);
+
+
+		//glfw callbacks
+		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height) {
+			WindowProperties& data = *(WindowProperties*)glfwGetWindowUserPointer(window);
+			data.width = width;
+			data.height = height;
+
+			WindowResizeEvent event(width, height);
+			data.eventCallback(event);
+		});
+
+		glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window) {
+			WindowProperties& data = *(WindowProperties*)glfwGetWindowUserPointer(window);
+			WindowCloseEvent event;
+
+			data.eventCallback(event);
+		});
+
+		glfwSetKeyCallback(m_Window, [](GLFWwindow* window, int key, int scancode, int action, int mods) {
+			WindowProperties& data = *(WindowProperties*)glfwGetWindowUserPointer(window);
+
+			switch (action) {
+				case GLFW_PRESS:
+				{
+					KeyPressedEvent event(key, 0);
+					data.eventCallback(event);
+					break;
+				}
+				case GLFW_RELEASE:
+				{
+					KeyReleasedEvent event(key);
+					data.eventCallback(event);
+					break;
+				}
+				case GLFW_REPEAT:
+				{
+					KeyPressedEvent event(key, 1);
+					data.eventCallback(event);
+					break;
+				}
+			}
+		});
+
+		glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods) {
+			WindowProperties& data = *(WindowProperties*)glfwGetWindowUserPointer(window);
+
+			switch (action) {
+			case GLFW_PRESS: 
+				{
+					MouseButtonPressedEvent event(button);
+					data.eventCallback(event);
+					break;
+				}
+				case GLFW_RELEASE:
+				{
+					MouseButtonPressedEvent event(button);
+					data.eventCallback(event);
+					break;
+				}
+			}
+		});
+
+		glfwSetScrollCallback(m_Window, [](GLFWwindow* window, double xOffset, double yOffset) {
+			WindowProperties& data = *(WindowProperties*)glfwGetWindowUserPointer(window);
+
+			mouseScrollEvent event((float)xOffset, (float)yOffset);
+			data.eventCallback(event);
+		});
+
+		glfwSetCursorPosCallback(m_Window, [](GLFWwindow* window, double xPos, double yPos) {
+			WindowProperties& data = *(WindowProperties*)glfwGetWindowUserPointer(window);
+
+			MouseMovedEvent event((float)xPos, (float)yPos);
+			data.eventCallback(event);
+		});
+
+
+
 
 		GLenum glewErr = glewInit();
 		if (glewErr != GLEW_OK) {

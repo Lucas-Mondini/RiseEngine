@@ -14,9 +14,10 @@ namespace Rise {
 
 		void Run();
 
-
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* layer);
+
+		void onEvent(Event& e);
 	private:
 		Rise::Window* m_window1;
 		LayerStack m_LayerStack;

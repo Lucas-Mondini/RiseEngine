@@ -8,7 +8,7 @@ public:
 		Layer(name){}
 
 	void onUpdate() {
-		RISE_CLIENT_INFO("{0}Layer::update", getName());
+		//RISE_CLIENT_INFO("{0}Layer::update", getName());
 	}
 };
 
